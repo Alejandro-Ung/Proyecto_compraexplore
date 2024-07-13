@@ -1,0 +1,33 @@
+algoritmo subsidio
+	algoritmo calcular_subsidio_transporte_con_nombre
+		Definir sueldo_minimo, subsidio_transporte, dias_trabajados, sueldo, subsidio_total como Real
+		Definir nombre_trabajador como Cadena
+		
+		sueldo_minimo <- 1300000
+		subsidio_transporte <- 164000
+		
+		Escribir "Bienvenido al sistema de cálculo de subsidio de transporte."
+		
+		Escribir "Ingrese el nombre del trabajador:"
+		Leer nombre_trabajador
+		
+		Escribir "Ingrese el sueldo del trabajador:"
+		Leer sueldo
+		
+		Si sueldo <= sueldo_minimo Entonces
+			Escribir "El trabajador ", nombre_trabajador, " tiene derecho al subsidio de transporte."
+			subsidio_total <- subsidio_transporte
+		Sino
+			Escribir "El sueldo supera el salario mínimo, por lo tanto, ", nombre_trabajador, " no tiene derecho al subsidio de transporte."
+			subsidio_total <- 0
+		FinSi
+		
+		Escribir "Ingrese el número de días trabajados en el mes:"
+		Leer dias_trabajados
+		
+		Si dias_trabajados < 30 Entonces
+			subsidio_total <- (subsidio_total / 30) * dias_trabajados
+		FinSi
+		
+		Escribir "El subsidio total para ", nombre_trabajador, " es: ", subsidio_total
+	Fin algoritmo

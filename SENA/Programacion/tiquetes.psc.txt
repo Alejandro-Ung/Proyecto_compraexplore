@@ -1,0 +1,78 @@
+Proceso compra_tiquetes_aereos
+    Definir nombre, correo, telefono, destino como Cadena
+    Definir kilos_equipaje, sobre_costo_equipaje, precio_total como Real
+    Definir opcion_menu como Entero
+    Definir continuar_compra como Caracter
+	
+    Repetir
+        Escribir "Bienvenido al sistema de compra de tiquetes aéreos."
+		
+        Escribir "Por favor, ingrese sus datos personales:"
+        Escribir "Nombre:"
+        Leer nombre
+        Escribir "Correo:"
+        Leer correo
+        Escribir "Teléfono:"
+        Leer telefono
+		
+        Escribir ""
+        Escribir "Seleccione el trayecto que desea consultar:"
+        Escribir "1. Bogotá - Cartagena"
+        Escribir "2. Bogotá - Medellín"
+        Escribir "3. Bogotá - Cali"
+        Escribir "4. Bogotá - San Andrés"
+        Escribir "5. Cartagena - Bogotá"
+        Escribir "6. Medellín - Bogotá"
+        Escribir "7. Cali - Bogotá"
+        Escribir "8. San Andrés - Bogotá"
+        Escribir "9. Salir"
+        Leer opcion_menu
+		
+        Segun opcion_menu
+            Caso 1:
+                destino <- "Bogotá - Cartagena"
+                precio_total <- 800000
+            Caso 2:
+                destino <- "Bogotá - Medellín"
+                precio_total <- 800000
+            Caso 3:
+                destino <- "Bogotá - Cali"
+                precio_total <- 800000
+            Caso 4:
+                destino <- "Bogotá - San Andrés"
+                precio_total <- 800000
+            Caso 5:
+                destino <- "Cartagena - Bogotá"
+                precio_total <- 800000
+            Caso 6:
+                destino <- "Medellín - Bogotá"
+                precio_total <- 800000
+            Caso 7:
+                destino <- "Cali - Bogotá"
+                precio_total <- 800000
+            Caso 8:
+                destino <- "San Andrés - Bogotá"
+                precio_total <- 800000
+            Caso 9:
+                Escribir "Saliendo del programa."
+	Escribir "Opción no válida."
+FinSegun
+
+Escribir "Ha seleccionado el trayecto: ", destino
+
+Escribir "¿Cuántos kilos de equipaje llevará?"
+Leer kilos_equipaje
+
+Si kilos_equipaje > 20 Entonces
+	sobre_costo_equipaje <- (kilos_equipaje - 20) * 2000
+	precio_total <- precio_total + sobre_costo_equipaje
+FinSi
+
+Escribir "El precio total del trayecto ", destino, " es: ", precio_total
+
+Escribir "¿Desea realizar otra compra? (S/N)"
+Leer continuar_compra
+Hasta continuar_compra = "N" o continuar_compra = "n"
+
+
+FinProceso
